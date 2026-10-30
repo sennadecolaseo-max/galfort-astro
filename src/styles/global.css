@@ -170,3 +170,7 @@ dialog.lightbox img { max-width: 96vw; max-height: 88vh; width: auto; height: au
 dialog.lightbox button { position: fixed; top: 12px; right: 12px; background: #fff; border: 0; border-radius: 50%; width: 40px; height: 40px; font-size: 1.4rem; cursor: pointer; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+/* Faixa azul com texto de leitura: a cor cinza de .prose não pode sobrescrever o branco da faixa */
+.cta-band .prose p { color: #fff; }
+.cta-band .prose p.breadcrumbs { color: #d5dde8; }
