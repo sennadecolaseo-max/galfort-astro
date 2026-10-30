@@ -46,7 +46,7 @@ const schema = [
       <p class="breadcrumbs"><a href="/">Início</a> › <a href="/estruturas-metalicas/">Estruturas metálicas</a> › {app.label}</p>
       <h1>{app.h1}</h1>
       <p>{app.lead}</p>
-      <WhatsAppButton label="Solicitar orçamento" message={`Olá! Vim pelo site da Galfort e gostaria de um orçamento para ${app.label.toLowerCase()} em estrutura metálica.`} track={`whatsapp_${app.slug}`} />
+      <WhatsAppButton label={`Orçamento de ${app.label.toLowerCase()}`} message={`Olá! Vim pelo site da Galfort e gostaria de um orçamento para ${app.label.toLowerCase()} em estrutura metálica.`} track={`whatsapp_${app.slug}`} />
     </div>
   </section>
 
