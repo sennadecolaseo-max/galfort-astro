@@ -5,7 +5,7 @@ import { SITE_URL, isIndexable } from './seo.config.mjs';
 export default defineConfig({
   site: SITE_URL,
   trailingSlash: 'always',
-  build: { format: 'directory', inlineStylesheets: 'auto' },
+  build: { format: 'directory', inlineStylesheets: 'always' },
   compressHTML: true,
   prefetch: { prefetchAll: false, defaultStrategy: 'hover' },
   integrations: [

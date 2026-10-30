@@ -1,0 +1,52 @@
+diff --git a/astro.config.mjs b/astro.config.mjs
+index 6f8dd7b..504db61 100644
+--- a/astro.config.mjs
++++ b/astro.config.mjs
+@@ -5,7 +5,7 @@ import { SITE_URL, isIndexable } from './seo.config.mjs';
+ export default defineConfig({
+   site: SITE_URL,
+   trailingSlash: 'always',
+-  build: { format: 'directory', inlineStylesheets: 'auto' },
++  build: { format: 'directory', inlineStylesheets: 'always' },
+   compressHTML: true,
+   prefetch: { prefetchAll: false, defaultStrategy: 'hover' },
+   integrations: [
+diff --git a/src/components/Footer.astro b/src/components/Footer.astro
+index 91063df..68c436b 100644
+--- a/src/components/Footer.astro
++++ b/src/components/Footer.astro
+@@ -7,7 +7,7 @@ const a = SITE.address;
+ <footer class="footer">
+   <div class="container footer__grid">
+     <div>
+-      <a class="logo" href="/"><Pic src="logo/logo_galfort.webp" alt={`Logo ${SITE.name}`} widths={[160, 320]} sizes="160px" /></a>
++      <a class="logo" href="/"><Pic src="logo/logo_galfort.webp" alt={`Logo ${SITE.name}`} widths={[276, 552]} sizes="276px" /></a>
+       <p>A Galfort é uma referência em estruturas metálicas pré-fabricadas, com mais de {SITE.years} anos de experiência, oferecendo soluções personalizadas e de qualidade.</p>
+       <!-- Redes sociais: adicione os links reais e descomente. O site original tinha href="#". -->
+     </div>
+diff --git a/src/components/Header.astro b/src/components/Header.astro
+index f8ed225..93197d9 100644
+--- a/src/components/Header.astro
++++ b/src/components/Header.astro
+@@ -8,7 +8,7 @@ const current = Astro.url.pathname;
+ <header class={`header${solid ? ' is-solid' : ''}`} id="top-header" data-solid={solid ? 'true' : 'false'}>
+   <div class="container bar">
+     <a class="logo" href="/" aria-label={`${SITE.name}: página inicial`}>
+-      <Pic src="logo/logo_galfort.webp" alt={`Logo ${SITE.name} ${SITE.legalTagline}`} widths={[160, 320]} sizes="160px" eager />
++      <Pic src="logo/logo_galfort.webp" alt={`Logo ${SITE.name} ${SITE.legalTagline}`} widths={[244, 488]} sizes="244px" eager />
+     </a>
+     <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+     <nav id="menu" aria-label="Principal">
+diff --git a/src/components/Pic.astro b/src/components/Pic.astro
+index 8b47770..155c0db 100644
+--- a/src/components/Pic.astro
++++ b/src/components/Pic.astro
+@@ -12,7 +12,7 @@ interface Props {
+   class?: string;
+   quality?: number;
+ }
+-const { src, alt, widths = [400, 800, 1200], sizes = '(min-width: 1140px) 360px, 100vw', priority = false, eager = false, class: cls, quality = 70 } = Astro.props;
++const { src, alt, widths = [400, 800, 1200], sizes = '(min-width: 1140px) 360px, 100vw', priority = false, eager = false, class: cls, quality = 60 } = Astro.props;
+ const img = asset(src);
+ ---
+ {img ? (
