@@ -4,11 +4,12 @@ import ContactForm from '../components/ContactForm.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { SITE } from '../data/site';
 
-const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Av. da Aclimação, 385, Aclimação, São Paulo - SP, 01531-001')}&output=embed`;
+const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Rua Manoel de Oliveira, 269, Mogi das Cruzes - SP')}&output=embed`;
+const a = SITE.address;
 ---
 <Base
   title="Contato e Orçamento de Estrutura Metálica | Galfort"
-  description="Fale com a Galfort: WhatsApp (11) 94071-9907 e escritório na Av. da Aclimação, 385, São Paulo. Peça orçamento de estrutura metálica pré-fabricada."
+  description="Fale com a Galfort: WhatsApp (11) 94071-9907 e escritório na Rua Manoel de Oliveira, 269, Mogi das Cruzes. Peça orçamento de estrutura metálica pré-fabricada."
   path="/contato/"
   pageType="ContactPage"
   solidHeader
@@ -24,8 +25,8 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Av. da Aclim
       </div>
       <div>
         <h2 style="font-size:1.5rem">Localização</h2>
-        <address class="nap">{SITE.address.street}<br />{SITE.address.neighborhood} – {SITE.address.city}/{SITE.address.region}<br />CEP {SITE.address.postalCode}<br />Telefone e WhatsApp: <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a></address>
-        <iframe class="map" title="Mapa: escritório da Galfort na Av. da Aclimação, 385, São Paulo" src={mapSrc} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <address class="nap">{a.street}<br />{a.neighborhood ? <>{a.neighborhood} – </> : null}{a.city}/{a.region}{a.postalCode ? <><br />CEP {a.postalCode}</> : null}<br />Telefone e WhatsApp: <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a></address>
+        <iframe class="map" title="Mapa: escritório da Galfort na Rua Manoel de Oliveira, 269, Mogi das Cruzes" src={mapSrc} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>

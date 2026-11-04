@@ -10,11 +10,12 @@ import { HOME_PHOTOS, photoAlt } from '../data/gallery';
 import { APPLICATIONS } from '../data/applications';
 
 const VIDEO_ID = 'ewUoy47YbhU';
-const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Av. da Aclimação, 385, Aclimação, São Paulo - SP, 01531-001')}&output=embed`;
+const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Rua Manoel de Oliveira, 269, Mogi das Cruzes - SP')}&output=embed`;
+const a = SITE.address;
 ---
 <Base
   title="Estruturas Metálicas Pré-Fabricadas em São Paulo | Galfort"
-  description="Estruturas metálicas pré-fabricadas para galpões, mezaninos, ginásios e edifícios. Vãos livres de até 50 m e +40 anos de experiência. Peça orçamento."
+  description="Estruturas metálicas pré-fabricadas para galpões, mezaninos, ginásios e edifícios. Vãos livres de até 50 m e desde 1984. Peça orçamento."
   path="/"
 >
   <section class="hero" aria-labelledby="hero-title">
@@ -22,7 +23,7 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Av. da Aclim
     <div class="container">
       <div class="hero__content">
         <h1 id="hero-title">Estruturas Metálicas Pré-Fabricadas</h1>
-        <p>Com mais de {SITE.years} anos de experiência, oferecemos soluções em estruturas metálicas pré-fabricadas para diversos setores, garantindo projetos personalizados, duráveis e de alta qualidade.</p>
+        <p>Desde {SITE.foundedYear}, a Galfort oferece soluções em estruturas metálicas pré-fabricadas para diversos setores, com projetos personalizados, duráveis e de alta qualidade.</p>
         <p class="hero__sectors">Industrial - Logística - Comercial - Ginásios - Mezaninos - Edifícios</p>
         <p class="hero__span">Vãos livres de até {SITE.maxSpanMeters} metros</p>
         <WhatsAppButton label="Fale conosco" track="whatsapp_hero" />
@@ -44,12 +45,21 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Av. da Aclim
     </div>
   </section>
 
+  <section class="section" aria-labelledby="sobre-galfort">
+    <div class="container prose">
+      <h2 id="sobre-galfort">Sobre a Galfort</h2>
+      <p>Fundada em {SITE.foundedYear}, na Grande São Paulo, como {SITE.formerName}. Hoje atua como Galfort, em estruturas metálicas pré-fabricadas.</p>
+      <p>Desde então executa obras em todo o território nacional, de pequenas a grandes, para empresas de diversos segmentos.</p>
+      <p>Usa métodos construtivos de ponta e projetos baseados em normas técnicas nacionais e americanas.</p>
+    </div>
+  </section>
+
   <section class="features" aria-label="Diferenciais da Galfort">
     <div class="container features__grid">
       <div>
         <div class="features__icon"><Icon name="anos" /></div>
         <h2>+{SITE.years} anos</h2>
-        <p>Atuação sólida no mercado de estruturas metálicas pré-fabricadas.</p>
+        <p>Desde {SITE.foundedYear} executando obras de pequeno a grande porte em todo o país.</p>
       </div>
       <div>
         <div class="features__icon"><Icon name="personalizado" /></div>
@@ -102,8 +112,8 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Av. da Aclim
         <ContactForm />
       </div>
       <div>
-        <address class="nap">{SITE.address.street} – {SITE.address.neighborhood}, {SITE.address.city}/{SITE.address.region} – CEP {SITE.address.postalCode}<br />Telefone e WhatsApp: <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a></address>
-        <iframe class="map" title="Mapa: escritório da Galfort na Av. da Aclimação, 385, São Paulo" src={mapSrc} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <address class="nap">{a.street} – {a.neighborhood ? `${a.neighborhood}, ` : ''}{a.city}/{a.region}{a.postalCode ? ` – CEP ${a.postalCode}` : ''}<br />Telefone e WhatsApp: <a href={`tel:${SITE.phoneE164}`}>{SITE.phoneDisplay}</a></address>
+        <iframe class="map" title="Mapa: escritório da Galfort na Rua Manoel de Oliveira, 269, Mogi das Cruzes" src={mapSrc} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>

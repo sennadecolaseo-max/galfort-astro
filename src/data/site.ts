@@ -1,23 +1,33 @@
+type Address = {
+  street: string;
+  neighborhood?: string;
+  city: string;
+  region: string;
+  postalCode?: string;
+  country: string;
+};
+
 export const SITE = {
   name: 'Galfort',
   legalTagline: 'Estrutura metálica pré-fabricada',
   url: 'https://galfort.com.br',
   locale: 'pt-BR',
+  foundedYear: 1984,
+  formerName: 'Construtora SR',
   years: 40,
   maxSpanMeters: 50,
   phoneDisplay: '(11) 94071-9907',
   phoneE164: '+5511940719907',
   whatsappNumber: '5511940719907',
   address: {
-    street: 'Av. da Aclimação, 385, 6º andar',
-    neighborhood: 'Aclimação',
-    city: 'São Paulo',
+    street: 'Rua Manoel de Oliveira, 269, Conjunto 04',
+    city: 'Mogi das Cruzes',
     region: 'SP',
-    postalCode: '01531-001',
     country: 'BR',
-  },
+    // TODO: informar neighborhood e postalCode quando a Galfort confirmar bairro e CEP.
+  } as Address,
   sectors: ['Industrial', 'Logística', 'Comercial', 'Ginásios', 'Mezaninos', 'Edifícios'],
-} as const;
+};
 
 export function whatsappLink(message = 'Olá! Vim pelo site da Galfort e gostaria de solicitar um orçamento de estrutura metálica.') {
   return `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;

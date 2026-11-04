@@ -8,7 +8,7 @@ const a = SITE.address;
   <div class="container footer__grid">
     <div>
       <a class="logo" href="/"><Pic src="logo/logo_galfort.webp" alt={`Logo ${SITE.name}`} widths={[276, 552]} sizes="276px" /></a>
-      <p>A Galfort é uma referência em estruturas metálicas pré-fabricadas, com mais de {SITE.years} anos de experiência, oferecendo soluções personalizadas e de qualidade.</p>
+      <p>Fundada em {SITE.foundedYear}, a Galfort executa obras de estruturas metálicas pré-fabricadas em todo o território nacional, com soluções personalizadas e de qualidade.</p>
       <!-- Redes sociais: adicione os links reais e descomente. O site original tinha href="#". -->
     </div>
     <nav aria-label="Rodapé">
@@ -20,7 +20,9 @@ const a = SITE.address;
     <div>
       <h2>Localização</h2>
       <address class="nap" style="color:#fff">
-        {a.street}<br />{a.neighborhood} – {a.city}/{a.region}<br />CEP {a.postalCode}
+        {a.street}<br />
+        {a.neighborhood ? `${a.neighborhood} – ` : ''}{a.city}/{a.region}
+        {a.postalCode ? <><br />CEP {a.postalCode}</> : null}
       </address>
       <a class="tel" href={`tel:${SITE.phoneE164}`}><Icon name="phone" size={22} /> {SITE.phoneDisplay}</a>
     </div>
