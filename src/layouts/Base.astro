@@ -45,7 +45,6 @@ const graph: Record<string, unknown>[] = [
     telephone: SITE.phoneE164,
     ...(logo ? { logo, image: logo } : {}),
     foundingDate: String(SITE.foundedYear),
-    alternateName: SITE.formerName,
     areaServed: { '@type': 'Country', name: 'Brasil' },
     address: {
       '@type': 'PostalAddress',
