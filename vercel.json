@@ -1,6 +1,5 @@
 {
   "trailingSlash": true,
-  "cleanUrls": true,
   "headers": [
     {
       "source": "/_astro/(.*)",
