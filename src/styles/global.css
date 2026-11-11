@@ -126,11 +126,15 @@ main.has-solid-header { padding-top: var(--header-h); }
 @media (max-width: 800px) { .contact { grid-template-columns: 1fr; } }
 
 /* Clientes */
-.clients { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px 20px; align-items: center; justify-items: center; margin-top: 32px; }
-.clients img { max-height: 118px; width: auto; max-width: 100%; object-fit: contain; }
-.clients .ph { width: 100px; height: 60px; background: #e6ebf1; }
-@media (max-width: 900px) { .clients { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 520px) { .clients { grid-template-columns: repeat(2, 1fr); } }
+.marquee { display: flex; overflow: hidden; margin-top: 32px; gap: 0; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+.marquee__track { display: flex; flex-shrink: 0; align-items: center; gap: 48px; padding-right: 48px; min-width: 100%; justify-content: space-around; animation: marquee 40s linear infinite; margin: 0; padding-left: 0; list-style: none; }
+.marquee li { flex: 0 0 auto; }
+.marquee img { height: 72px; width: auto; max-width: 160px; object-fit: contain; }
+.marquee .ph { width: 100px; height: 60px; background: #e6ebf1; }
+.marquee:hover .marquee__track, .marquee:focus-within .marquee__track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-100%); } }
+@media (max-width: 520px) { .marquee__track { gap: 32px; padding-right: 32px; animation-duration: 50s; } .marquee img { height: 56px; max-width: 120px; } }
+@media (prefers-reduced-motion: reduce) { .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; } .marquee__track { animation: none; } .marquee__track[aria-hidden="true"] { display: none; } }
 
 /* Rodapé */
 .footer { background: #000; color: #fff; padding: 48px 0 24px; }

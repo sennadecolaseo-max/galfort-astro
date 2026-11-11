@@ -119,9 +119,14 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent('Rua Manoel d
   <section class="section center" aria-labelledby="clientes">
     <div class="container">
       <h2 id="clientes">Alguns clientes Galfort</h2>
-      <ul class="clients" style="list-style:none;padding:0">
-        {CLIENTS.map((c) => <li><Pic src={`empresas/${c.file}`} alt={`Logo ${c.name}`} widths={[160, 320]} sizes="160px" /></li>)}
-      </ul>
+      <div class="marquee">
+        <ul class="marquee__track">
+          {CLIENTS.map((c) => <li><Pic src={`empresas/${c.file}`} alt={`Logo ${c.name}`} widths={[160, 320]} sizes="160px" eager /></li>)}
+        </ul>
+        <ul class="marquee__track" aria-hidden="true">
+          {CLIENTS.map((c) => <li><Pic src={`empresas/${c.file}`} alt="" widths={[160, 320]} sizes="160px" eager /></li>)}
+        </ul>
+      </div>
     </div>
   </section>
 </Base>
