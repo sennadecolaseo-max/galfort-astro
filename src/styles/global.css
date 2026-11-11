@@ -134,7 +134,12 @@ main.has-solid-header { padding-top: var(--header-h); }
 .marquee:hover .marquee__track, .marquee:focus-within .marquee__track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-100%); } }
 @media (max-width: 520px) { .marquee__track { gap: 32px; padding-right: 32px; animation-duration: 50s; } .marquee img { height: 56px; max-width: 120px; } }
-@media (prefers-reduced-motion: reduce) { .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; } .marquee__track { animation: none; } .marquee__track[aria-hidden="true"] { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; display: block; }
+  .marquee__track { animation: none; flex-wrap: wrap; justify-content: center; gap: 24px 32px; padding-right: 0; min-width: 0; }
+  .marquee__track[aria-hidden="true"] { display: none; }
+  .marquee img { height: 64px; max-width: 140px; }
+}
 
 /* Rodapé */
 .footer { background: #000; color: #fff; padding: 48px 0 24px; }
