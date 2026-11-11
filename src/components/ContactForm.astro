@@ -24,7 +24,8 @@ const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT as string | undefined;
         d.get('email') ? `E-mail: ${d.get('email')}` : '',
         `Mensagem: ${d.get('mensagem')}`,
       ].filter(Boolean).join('\n');
-      (window as any).gtag?.('event', 'generate_lead', { method: 'form_whatsapp' });
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({ event: 'generate_lead', method: 'form_whatsapp' });
       window.open(`https://wa.me/${form.dataset.wa}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
     });
   }

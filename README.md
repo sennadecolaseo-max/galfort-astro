@@ -14,7 +14,8 @@ npm run build             # gera dist/
 Deploy: Vercel (importar o repositório; `vercel.json` já define trailing slash, cache e headers).
 
 Variáveis opcionais (`.env.example`):
-- `PUBLIC_GA_ID`: GA4. Sem ele, nenhum script de analytics carrega.
+- `PUBLIC_GTM_ID`: Google Tag Manager (`GTM-PNWD6W5P`). Sem ele, nenhum script do Google carrega. O GA4 é configurado dentro do GTM.
+- `PUBLIC_GA_ID`: obsoleto. O site não lê mais esta variável; o GA4 agora é configurado dentro do GTM.
 - `PUBLIC_FORM_ENDPOINT`: endpoint do formulário (ex.: Formspree). Sem ele, o formulário abre o WhatsApp com a mensagem pronta.
 
 ## Estrutura
@@ -45,7 +46,7 @@ Isso aplica `index,follow` e inclui a URL no `sitemap-index.xml`.
 - Vídeo do YouTube em *facade* (iframe só carrega no clique). Mapa com iframe lazy.
 - Ícones em SVG inline (sem requisições extras). Lightbox em `<dialog>` nativo.
 - Telefone único: (11) 94071-9907. "mais de 30 anos" em todo o site.
-- Formulário funcional e cliques de WhatsApp rastreados no GA4 (evento `generate_lead`).
+- Formulário funcional e cliques de WhatsApp enviados à dataLayer (evento `generate_lead`), para o GTM disparar.
 - Rodapé sem crédito de desenvolvedor e sem links `#` de redes sociais.
 
 ## Pendências antes de liberar a indexação
@@ -54,7 +55,7 @@ Isso aplica `index,follow` e inclui a URL no `sitemap-index.xml`.
 2. **Revisar** os textos de `applications.ts` e do guia pilar com a Galfort. Acrescentar dados reais: obras, vãos, áreas, cidades.
 3. Se citar normas técnicas (ex.: ABNT NBR 8800), validar o texto antes de publicar.
 4. **Redes sociais**: informar os links reais e reativar no rodapé.
-5. Configurar `PUBLIC_GA_ID` e `PUBLIC_FORM_ENDPOINT`.
+5. Configurar `PUBLIC_GTM_ID` (na Vercel) e `PUBLIC_FORM_ENDPOINT`. `PUBLIC_GA_ID` está obsoleto.
 6. Cadastrar o domínio no Search Console e enviar `sitemap-index.xml`.
 7. Alinhar o Perfil da Empresa no Google (nome, endereço, telefone) ao rodapé do site.
 8. Configurar redirecionamento do domínio antigo e `www` → apex no painel do domínio (Vercel).
