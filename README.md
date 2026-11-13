@@ -45,7 +45,7 @@ Isso aplica `index,follow` e inclui a URL no `sitemap-index.xml`.
 - Imagens via `astro:assets`: WebP responsivo com `srcset`, `width`/`height` (sem CLS), lazy-load e LCP com `fetchpriority="high"`.
 - Vídeo do YouTube em *facade* (iframe só carrega no clique). Mapa com iframe lazy.
 - Ícones em SVG inline (sem requisições extras). Lightbox em `<dialog>` nativo.
-- Telefone único: (11) 94071-9907. "mais de 30 anos" em todo o site.
+- Telefone único: (11) 94071-9907. "mais de 40 anos" em todo o site.
 - Formulário funcional e cliques de WhatsApp enviados à dataLayer (evento `generate_lead`), para o GTM disparar.
 - Rodapé sem crédito de desenvolvedor e sem links `#` de redes sociais.
 
