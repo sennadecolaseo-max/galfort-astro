@@ -127,18 +127,18 @@ main.has-solid-header { padding-top: var(--header-h); }
 
 /* Clientes */
 .marquee { display: flex; overflow: hidden; margin-top: 32px; gap: 0; -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
-.marquee__track { display: flex; flex-shrink: 0; align-items: center; gap: 56px; padding-right: 56px; min-width: 100%; justify-content: space-around; animation: marquee 48s linear infinite; margin: 0; padding-left: 0; list-style: none; }
+.marquee__track { display: flex; flex-shrink: 0; align-items: center; gap: 64px; padding-right: 64px; min-width: 100%; justify-content: space-around; animation: marquee 56s linear infinite; margin: 0; padding-left: 0; list-style: none; }
 .marquee li { flex: 0 0 auto; }
-.marquee img { height: 92px; width: auto; max-width: 200px; object-fit: contain; }
-.marquee .ph { width: 124px; height: 76px; background: #e6ebf1; }
+.marquee img { height: 120px; width: auto; max-width: 200px; object-fit: contain; }
+.marquee .ph { width: 160px; height: 100px; background: #e6ebf1; }
 .marquee:hover .marquee__track, .marquee:focus-within .marquee__track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-100%); } }
-@media (max-width: 520px) { .marquee__track { gap: 40px; padding-right: 40px; animation-duration: 60s; } .marquee img { height: 72px; max-width: 150px; } }
+@media (max-width: 520px) { .marquee__track { gap: 48px; padding-right: 48px; animation-duration: 68s; } .marquee img { height: 92px; max-width: 150px; } }
 @media (prefers-reduced-motion: reduce) {
   .marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; display: block; }
   .marquee__track { animation: none; flex-wrap: wrap; justify-content: center; gap: 24px 32px; padding-right: 0; min-width: 0; }
   .marquee__track[aria-hidden="true"] { display: none; }
-  .marquee img { height: 80px; max-width: 170px; }
+  .marquee img { height: 100px; max-width: 170px; }
 }
 
 /* Rodapé */

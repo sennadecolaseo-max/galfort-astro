@@ -12,7 +12,6 @@ export const CLIENTS = [
   { name: 'Prefeitura de Santos', file: 'prefeitura_santos.png' },
   { name: 'Osmos', file: 'osmos.png' },
   { name: 'Marina Asturias', file: 'marina_asturias.png' },
-  { name: 'Odebrecht', file: 'odebrecht.png' },
   { name: 'WZ Hotel Jardins', file: 'wz_hotel_jardins.png' },
   { name: 'Sherwin-Williams', file: 'sherwin_williams.png' },
   { name: 'Fazenda Cafelândia', file: 'fazenda_cafelandia.png' },

@@ -4,7 +4,7 @@ export const ORIGIN = 'https://galfort.com.br/assets/img';
 
 const empresas = [
   'eletrica_brasil', 'carrefour', 'assai', 'shibata', 'condominio_wembley', 'cristal', 'ford',
-  'memorial_necropole', 'prefeitura_santos', 'osmos', 'marina_asturias', 'odebrecht',
+  'memorial_necropole', 'prefeitura_santos', 'osmos', 'marina_asturias',
   'wz_hotel_jardins', 'sherwin_williams', 'fazenda_cafelandia', 'usiminas', 'emplatec', 'placo', 'imerys',
 ].map((n) => `empresas/${n}.png`);
 
